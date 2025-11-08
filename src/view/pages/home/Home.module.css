@@ -1,0 +1,17 @@
+.home-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+}
+
+.home-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6; /* Cinza claro */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937; /* Cinza escuro */
+}

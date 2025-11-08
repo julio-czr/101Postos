@@ -1,0 +1,109 @@
+.sb {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background: #1d1d1d;
+  color: #fff;
+  padding: 20px;
+  /* box-shadow: 2px 0 8px rgba(0, 0, 0, 0.35); */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1000;
+  transition: transform .25s ease;
+}
+
+.sb-inner {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sb-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+.sb-name {
+  margin-top: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sb-btn {
+  margin-top: 13px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  width: 80%;
+  font-weight: 500;
+}
+.sb-btn:hover {
+  background: var(--secondary-color);
+}
+
+/* Toggle (three dots) - visible apenas em mobile */
+.sb-toggle {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1100;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Backdrop para fechar tocando fora (aparece em mobile) */
+.sb-backdrop {
+  display: none;
+}
+
+/* Mobile behavior */
+@media (max-width: 720px) {
+  .sb {
+    transform: translateX(-100%);
+    width: 260px;
+    position: fixed;
+    z-index: 1000;
+
+  }
+
+  .sb.open {
+    transform: translateX(0);
+  }
+
+  .sb-toggle {
+    display: flex;
+  }
+
+  .sb-backdrop.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 900;
+  }
+}
+
+/* Desktop: sempre visível */
+@media (min-width: 721px) {
+  .sb {
+    transform: none;
+  }
+}
