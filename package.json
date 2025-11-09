@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "serve -s dist -l 8080"
-
+    
 
   },
   "dependencies": {
@@ -33,3 +32,4 @@
     "vite": "^7.1.4"
   }
 }
+
